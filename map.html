@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>usa map</title>
+<style>
+	body {
+		font-family: Helvetica, Arial, sans-serif;
+	}
+	h1 {
+		font-size: 20px;
+	}
+	div {
+		width: 100%;
+	}
+	img[usemap] {
+		border: none;
+		height: auto;
+		max-width: 100%;
+		width: auto;
+	}
+	</style>
+</head>
+
+<body>
+<header>
+  <h1>Map of USA<br>
+  </h1>
+The 50 States
+</header>
+<main>
+  <a href="https://en.wikipedia.org/wiki/United_States"><img src="usa.png" width="1310" height="796" usemap="#Map2"/></a>
+  <map name="Map2">
+    <area shape="poly" coords="337,195,475,212,467,325,322,304" href="http://www.wyoming.gov" title="Wyoming">
+    <area shape="poly" coords="813,281,765,286,810,283,812,282,833,405,833,406,796,443,740,350,768,285" href="http://www.illinois.gov" title="Illinois">
+    <area shape="poly" coords="479,461,548,465,547,519,684,549,696,656,621,706,608,760,561,751,508,656,481,649,461,671,387,585,471,586" href="https://www.texas.gov" title="Texas">
+    
+  
+    <area shape="poly" coords="1099,165,1099,165,1117,279,1152,270,1119,288,1096,274,1118,281,1111,282,1098,275,1080,259,987,272,996,238,1069,168" href="https://www.ny.gov" title="New York">
+  </map>
+
+</main>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="jquery.rwdImageMaps.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+	
+	$('area').on('click', function() {
+		alert($(this).attr('alt') + ' clicked');
+	});
+});
+</script>
+</body>
+</html>
